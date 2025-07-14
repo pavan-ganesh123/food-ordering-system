@@ -33,7 +33,7 @@ function DashBoard() {
     <div className="App">
       <header>
         <div className="navbar">
-          <h1 className="logo">Stamjsp</h1>
+          <h1 className="logo">CraveNext</h1>
           <nav>
             <ul>
               <li>
