@@ -1,0 +1,262 @@
+/* styles.css — Vibrant Global Styles */
+
+/* Reset & Box Sizing */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Color Palette Variables */
+:root {
+  --color-bg-light: #faf9f6;
+  --color-bg-accent: #fffbf0;
+  --color-text: #333333;
+  --color-primary: #ff6b6b;    /* lively coral */
+  --color-secondary: #4ecdc4;  /* fresh teal */
+  --color-info: #556270;       /* deep slate */
+  --color-warning: #f7d794;    /* sunny yellow */
+  --color-success: #2ecc71;    /* vibrant green */
+  --radius: 10px;
+  --transition: 0.4s ease;
+  --font-base: 'Poppins', sans-serif;
+}
+
+/* Body Base Styles */
+body {
+  font-family: var(--font-base);
+  background-color: var(--color-bg-light);
+  color: var(--color-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  padding-bottom: 50px; /* allow breathing room */
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
+  color: var(--color-info);
+  font-weight: 600;
+}
+
+/* Paragraph */
+p {
+  margin-bottom: 1rem;
+}
+
+/* Links */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+a:hover {
+  color: var(--color-secondary);
+}
+
+/* Buttons */
+button {
+  font-family: var(--font-base);
+  padding: 0.75rem 1.5rem;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+}
+button:hover {
+  background: var(--color-secondary);
+  transform: translateY(-2px);
+}
+button:disabled {
+  background: var(--color-warning);
+  cursor: not-allowed;
+}
+
+/* Utility Classes */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+.flex { display: flex; gap: 1rem; }
+.grid { display: grid; gap: 1.5rem; }
+.text-center { text-align: center; }
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+
+/* Form Elements */
+input, textarea, select {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid var(--color-secondary);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(78,205,196,0.2);
+  outline: none;
+}
+
+/* Section Styles */
+section {
+  padding: 4rem 0;
+  background-color: var(--color-bg-accent);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { background: #eaeaea; }
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: var(--radius);
+  border: 3px solid #eaeaea;
+}
+
+/* Image Utility */
+img { max-width: 100%; border-radius: var(--radius); }
+
+/* Card Component */
+.card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+/* Alerts */
+.alert {
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+}
+.alert-success { background: var(--color-success); color: #fff; }
+.alert-warning { background: var(--color-warning); color: #333; }
+.alert-info    { background: var(--color-info);    color: #fff; }
+.alert-error   { background: #e74c3c;            color: #fff; }
+
+/* Footer */
+footer {
+  background: var(--color-info);
+  color: #fff;
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 4rem;
+}
+footer p { margin: 0; font-size: 0.9rem; }
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.5rem; }
+  p { font-size: 0.95rem; }
+}
+
+/* Navbar/Header Styles (Orange/Yellow Theme) */
+header {
+  background: linear-gradient(135deg, #ff5722, #ffd700);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: none;
+}
+
+.navbar .logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.navbar nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.navbar nav ul li a {
+  color: #fff;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  transition: background var(--transition), color var(--transition);
+  text-transform: uppercase;
+}
+
+.navbar nav ul li a:hover {
+  background-color: #ffd700;
+  color: #ff5722;
+}
+
+/* Profile dropdown styling remains unchanged */
+.profile {
+  position: relative;
+  cursor: pointer;
+}
+
+.profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 50px;
+  background: var(--color-light);
+  border: 1px solid #ddd;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 150px;
+}
+
+.dropdown-menu p {
+  margin: 0;
+  font-weight: 600;
+  color: var(--color-info);
+}
+
+.dropdown-menu a,
+.dropdown-menu button {
+  background: none;
+  border: none;
+  color: var(--color-text);
+  text-align: left;
+  padding: 0.3rem 0;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: color var(--transition);
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu button:hover {
+  color: var(--color-primary);
+}

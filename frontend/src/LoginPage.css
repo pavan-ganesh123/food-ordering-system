@@ -1,0 +1,133 @@
+/* Container Styling */
+.login-container,
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ff8e53, #fe6b8b);
+  font-family: Arial, sans-serif;
+  padding: 1rem;
+}
+
+/* Form Styling */
+.login-container form,
+.signup-container form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 375px;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease;
+  position: relative; /* Set relative to contain the blinking ball */
+}
+
+.login-container form:hover,
+.signup-container form:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Blinking Ball Styling - now positioned relative to the form container */
+.blinking-ball {
+  width: 12px;
+  height: 12px;
+  background-color: #86e29b;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -1rem; /* Move the ball further down */
+  left: 1rem;
+  animation: blink 1.5s infinite ease-in-out;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+
+/* Signup Page Title Styling */
+.signup-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.signup-title .gif-icon {
+  width: 48px; /* Adjusted for a balanced look */
+  height: 48px;
+  margin-right: 4px; /* Slight spacing from the surrounding text */
+  transform: translateY(-4px); /* Adjusts vertical alignment */
+}
+
+/* Input and Button Styling */
+.login-container input,
+.signup-container input {
+  margin-bottom: 1.2rem;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.login-container input:focus,
+.signup-container input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.login-container button,
+.signup-container button {
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-container button:hover,
+.signup-container button:hover {
+  background-color: #0056b3;
+}
+
+/* Message Styling */
+.login-container .message,
+.signup-container .message {
+  margin-top: 1.2rem;
+  font-size: 0.9rem;
+  color: #d9534f;
+  text-align: center;
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 480px) {
+  .login-container h1,
+  .signup-container .signup-title {
+    font-size: 1.8rem;
+  }
+  .login-container form,
+  .signup-container form {
+    padding: 1.5rem;
+  }
+  .login-container button,
+  .signup-container button {
+    font-size: 1rem;
+  }
+}

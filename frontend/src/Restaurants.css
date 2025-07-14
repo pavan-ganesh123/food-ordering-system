@@ -1,0 +1,67 @@
+/* Main container */
+.restaurant-list {
+  padding: 40px 20px;
+  background-color: #f3f4f6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Restaurant card grid */
+.restaurant-list > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+/* Restaurant card */
+.restaurant-list div > div {
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hover effect */
+.restaurant-list div > div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Restaurant image */
+.restaurant-list img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+/* Image hover */
+.restaurant-list div > div:hover img {
+  opacity: 0.92;
+}
+
+/* Restaurant name */
+.restaurant-list h3 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 16px 0;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+/* Name hover color */
+.restaurant-list div > div:hover h3 {
+  color: #1a73e8;
+}

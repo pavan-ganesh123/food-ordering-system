@@ -1,0 +1,111 @@
+/* Reset some basic styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .owner-signup-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff8e53, #fe6b8b);
+    font-family: Arial, sans-serif;
+    padding: 1rem;
+  }
+  
+  .owner-signup-form {
+    position: relative; /* Set relative positioning for form container */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 0.6s ease;
+  }
+  .blinking-ball {
+    position: absolute;
+    top: -15px; /* Position at form's top-left corner */
+    left: -15px; /* Adjust as needed */
+    width: 35px;
+    height: 35px;
+    background-color: #34eb83;
+    border-radius: 50%;
+    animation: blink 2s infinite; /* Increase blink time */
+    z-index: 1;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+  .owner-signup-form h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .owner-signup-form label {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 8px;
+    display: block;
+  }
+  
+  .owner-signup-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.3s;
+  }
+  
+  .owner-signup-form input:focus {
+    border-color: #555;
+    outline: none;
+  }
+  
+  .owner-signup-form button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  
+  .owner-signup-form .message {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #28a745;
+    text-align: center;
+  }
+  
+  .owner-signup-form .error {
+    color: #d9534f;
+  }
+  
+  @media (max-width: 600px) {
+    .owner-signup-form {
+      padding: 20px;
+    }
+  }
+  

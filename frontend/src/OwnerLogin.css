@@ -1,0 +1,144 @@
+/* OwnerLogin.css */
+.owner-login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff8e53, #ffef77);
+    font-family: Arial, sans-serif;
+    padding: 1rem;
+}
+
+.owner-login-container h2 {
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.owner-login-form {
+    position: relative; /* Set relative positioning for form container */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 0.6s ease;
+}
+
+/* Blinking ball */
+.blinking-ball {
+    position: absolute;
+    top: -15px; /* Position at form's top-left corner */
+    left: -15px; /* Adjust as needed */
+    width: 35px;
+    height: 35px;
+    background-color: #34eb83;
+    border-radius: 50%;
+    animation: blink 2s infinite; /* Increase blink time */
+    z-index: 1;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+.owner-login-form div {
+    margin-bottom: 1.5rem;
+}
+
+.owner-login-form label {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.owner-login-form input {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.owner-login-form input:focus {
+    border-color: #ff8e53;
+    box-shadow: 0 0 5px rgba(255, 142, 83, 0.5);
+}
+
+.owner-login-form button {
+    padding: 0.75rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background-color: #ff8e53;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.owner-login-form button:hover {
+    background-color: #e67445;
+}
+
+.owner-login-message {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #ff8e53;
+    text-align: center;
+}
+
+.owner-login-form p {
+    font-size: 0.9rem;
+    color: #555;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.owner-login-form a {
+    color: #ff8e53;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.owner-login-form a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    .owner-login-container h2 {
+        font-size: 2rem;
+    }
+
+    .owner-login-form {
+        padding: 1.5rem;
+    }
+
+    .owner-login-form button {
+        font-size: 1rem;
+    }
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
