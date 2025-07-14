@@ -10,7 +10,11 @@ const PORT = 5000;
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: 'https://food-ordering-system-imn3.vercel.app', // your frontend Vercel URL
+  credentials: true
+}));
+
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI, {
