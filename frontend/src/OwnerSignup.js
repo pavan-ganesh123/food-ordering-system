@@ -15,7 +15,7 @@ function OwnerSignup() {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/owner/signup', {
+      const response = await axios.post('https://mern-backend-b5c1.onrender.com/owner/signup', {
         email,
         password,
         restaurantName,

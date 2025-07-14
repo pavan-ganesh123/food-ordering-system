@@ -6,7 +6,7 @@ export default function AdminPanel() {
 
   useEffect(() => {
     if (!token) return;
-    fetch('http://localhost:5000/restaurants', {
+    fetch('https://mern-backend-b5c1.onrender.com/restaurants', {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(r => r.json())
@@ -16,7 +16,7 @@ export default function AdminPanel() {
 
   const handleDelete = async (_id) => {
     if (!window.confirm('Are you sure?')) return;
-    const res = await fetch(`http://localhost:5000/admin/restaurant/${_id}`, {
+    const res = await fetch(`https://mern-backend-b5c1.onrender.com/admin/restaurant/${_id}`, {
       method: 'DELETE',
       headers: { Authorization: `Bearer ${token}` }
     });

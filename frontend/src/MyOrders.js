@@ -10,7 +10,7 @@ function MyOrders() {
     const fetchOrders = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:5000/orders', {
+        const response = await axios.get('https://mern-backend-b5c1.onrender.com/orders', {
           headers: { Authorization: `Bearer ${token}` },
         });
         setOrders(response.data.orders || []);

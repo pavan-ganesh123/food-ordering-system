@@ -20,7 +20,7 @@ function Signup() {
     }
 
     try {
-      await axios.post('http://localhost:5000/signup', { email, password });
+      await axios.post('https://mern-backend-b5c1.onrender.com/signup', { email, password });
       setMessage("Signup successful! Redirecting to login...");
       setTimeout(() => navigate("/login"), 1500); // Redirect to login after a delay
     } catch (error) {

@@ -12,7 +12,7 @@ function OwnerLogin() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/owner/login', {
+      const response = await axios.post('https://mern-backend-b5c1.onrender.com/owner/login', {
         email,
         password,
       });

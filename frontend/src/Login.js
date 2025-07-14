@@ -15,7 +15,7 @@ function Login() {
     event.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5000/login', { email, password });
+      const response = await axios.post('https://mern-backend-b5c1.onrender.com/login', { email, password });
       const { token, email: userEmail } = response.data;
       localStorage.setItem("token", token);
       localStorage.setItem("email", userEmail);

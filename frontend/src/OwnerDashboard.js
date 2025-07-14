@@ -28,7 +28,7 @@ function OwnerDashboard() {
     const fetchFoodItems = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/food-items/${restaurantName}`
+          `https://mern-backend-b5c1.onrender.com/food-items/${restaurantName}`
         );
         setFoodItems(response.data);
       } catch (error) {
@@ -39,7 +39,7 @@ function OwnerDashboard() {
     const fetchOrders = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/owner/orders/${restaurantName}`
+          `https://mern-backend-b5c1.onrender.com/owner/orders/${restaurantName}`
         );
         setOrders(response.data || []);
       } catch (error) {
@@ -56,7 +56,7 @@ function OwnerDashboard() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        'http://localhost:5000/owner/add-food',
+        'https://mern-backend-b5c1.onrender.com/owner/add-food',
         {
           restaurantName,
           itemName: newItem.itemName,
@@ -81,7 +81,7 @@ function OwnerDashboard() {
   const handleDeleteFoodItem = async (itemId) => {
     try {
       await axios.delete(
-        `http://localhost:5000/owner/delete-food/${itemId}`,
+        `https://mern-backend-b5c1.onrender.com/owner/delete-food/${itemId}`,
         { headers: { Authorization: `Bearer ${localStorage.getItem('token')}` } }
       );
       setFoodItems(foodItems.filter(item => item._id !== itemId));
@@ -96,7 +96,7 @@ function OwnerDashboard() {
   const handleDeleteAccount = async () => {
     if (!window.confirm('Are you sure you want to delete your account?')) return;
     try {
-      await axios.delete('http://localhost:5000/owner/delete-account', {
+      await axios.delete('https://mern-backend-b5c1.onrender.com/owner/delete-account', {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       });
       localStorage.removeItem('restaurantName');
@@ -112,7 +112,7 @@ function OwnerDashboard() {
   const handleCompleteOrder = async (orderId) => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/owner/complete-order/${orderId}`
+        `https://mern-backend-b5c1.onrender.com/owner/complete-order/${orderId}`
       );
       setOrders(prev => prev.filter(o => o._id !== orderId));
       alert(response.data.message);

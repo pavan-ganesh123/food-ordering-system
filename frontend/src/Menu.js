@@ -11,7 +11,7 @@ const Menu = () => {
 
   // Fetch all items on mount
   useEffect(() => {
-    fetch('http://localhost:5000/search')
+    fetch('https://mern-backend-b5c1.onrender.com/search')
       .then(res => res.json())
       .then(data => {
         setItems(data);
@@ -49,7 +49,7 @@ const handlePlaceOrder = async () => {
     // send all orders in one batch or individually per restaurant—
     // here's sending individually per item with quantity:
     await Promise.all(orders.map(item =>
-      fetch('http://localhost:5000/order-food', {
+      fetch('https://mern-backend-b5c1.onrender.com/order-food', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

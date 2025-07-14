@@ -9,7 +9,7 @@ const RestaurantDetails = ({ restaurantName }) => {
     useEffect(() => {
         const fetchFoodItems = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/food-items/${restaurantName}`);
+                const response = await axios.get(`https://mern-backend-b5c1.onrender.com/food-items/${restaurantName}`);
                 setFoodItems(response.data);
             } catch (error) {
                 console.error('Error fetching food items:', error);
@@ -22,7 +22,7 @@ const RestaurantDetails = ({ restaurantName }) => {
         const token = localStorage.getItem('token'); // Retrieve the token
 
         try {
-            const response = await axios.post('http://localhost:5000/order-food', { ...orderData, userEmail: localStorage.getItem('email') }, {
+            const response = await axios.post('https://mern-backend-b5c1.onrender.com/order-food', { ...orderData, userEmail: localStorage.getItem('email') }, {
                 headers: {
                     Authorization: `Bearer ${token}` // Add Authorization header
                 }
